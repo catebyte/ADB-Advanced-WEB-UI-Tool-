@@ -2,7 +2,7 @@
 
 A simple, intuitive web-based interface for managing Android devices with the Android Debug Bridge (ADB).
 
-![Screenshot of the main page](images/screenshot1.png)
+![Screenshot of the main page](images/Home%20Page.png)
 
 ## Features
 
