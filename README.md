@@ -57,6 +57,27 @@ A simple, intuitive web-based interface for managing Android devices with the An
     *   Connect your device to your computer via USB or Wi-Fi.
     *   Enter your device's IP address in the WebUI and click "Connect".
 
+## ⚠️ Warnings & Disclaimers
+
+> ⚠️ **Use at Your Own Risk**  
+> This tool gives full control over Android devices via ADB. Misuse can result in data loss, bricked devices, or permanent damage. Always test carefully.
+
+> 🔐 **For Trusted Devices Only**  
+> Use only with devices you own or have permission to control. Unauthorized use may violate laws or terms of service.
+
+> ❌ **No Warranty or Liability**  
+> This software is provided "as is" without warranty. The developers are not responsible for any harm, data loss, or legal issues arising from its use.
+
+> 🛑 **Highly Privileged Features**  
+> This interface allows direct file access, app control, screen mirroring, and shell command execution. Do not run on shared or insecure systems.
+
+> 🌐 **Secure Your Deployment**  
+> If hosted on a network or public server:
+> - Always enable authentication
+> - Use HTTPS (SSL)
+> - Restrict access by IP or VPN  
+> Never expose the interface to the open internet without protection.
+
 ## How to Contribute
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
