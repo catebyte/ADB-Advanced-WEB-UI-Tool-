@@ -28,7 +28,7 @@ A simple, intuitive web-based interface for managing Android devices with the An
 2.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/adb-webui.git
+    git clone https://github.com/catebyte/ADB-Advanced-WEB-UI-Tool-.git
     cd adb-webui
     ```
 
