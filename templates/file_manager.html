@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager - ADB WebUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="header-link">ADB WebUI</a> - File Manager</h1>
+            <div class="breadcrumb">
+                {% for part in path.split('/') %}
+                    {% if part %}
+                        <a href="{{ url_for('file_manager', path=path.split(part)[0] + part) }}">{{ part }}</a> /
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </header>
+
+        <main>
+            <div class="file-manager">
+                <div class="file-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if path != '/' and path != '' %}
+                            <tr>
+                                <td colspan="3">
+                                    <a href="{{ url_for('file_manager', path=path.rsplit('/', 1)[0] or '/') }}">
+                                        <i class="fas fa-arrow-left"></i> Back
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endif %}
+                            {% for item in items %}
+                            <tr>
+                                <td>
+                                    {% if item.type == 'directory' %}
+                                        <i class="fas fa-folder"></i>
+                                        <a href="{{ url_for('file_manager', path=item.path) }}">{{ item.name }}</a>
+                                    {% else %}
+                                        <i class="fas fa-file"></i>
+                                        {{ item.name }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ item.type }}</td>
+                                <td>
+                                    {% if item.type != 'directory' %}
+                                        <a href="{{ url_for('view_file', path=item.path) }}" target="_blank" class="btn btn-sm">View</a>
+                                    {% endif %}
+                                    <form action="{{ url_for('delete_item') }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                        <input type="hidden" name="path" value="{{ item.path }}">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

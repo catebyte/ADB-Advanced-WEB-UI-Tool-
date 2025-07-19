@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADB WebUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ADB WebUI</h1>
+            <div class="connect-container">
+                <input type="text" id="ip_address" placeholder="Enter Device IP">
+                <button id="connect_btn" class="btn">Connect</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="controls" class="hidden">
+                <div class="control-section">
+                    <h3>File Manager</h3>
+                    <a href="/files" class="btn">Open File Manager</a>
+                </div>
+
+                <div class="control-section">
+                    <h3>Screen Capture</h3>
+                    <a href="/screen_capture" class="btn">Open Screen Capture</a>
+                </div>
+
+                <div class="control-section">
+                    <h3>Live Screen</h3>
+                    <a href="/live_screen" class="btn">Start Live Screen</a>
+                </div>
+
+                <div class="control-section">
+                    <h3>Shell Execute</h3>
+                    <a href="/shell_execute" class="btn">Open Shell Execute</a>
+                </div>
+
+                <div class="control-section">
+                    <h3>App Management</h3>
+                    <a href="/app_management" class="btn">Open App Management</a>
+                </div>
+            </div>
+
+            <div id="output-container">
+                <h3>Output</h3>
+                <pre id="output"></pre>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

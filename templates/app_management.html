@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Management - ADB WebUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="header-link">ADB WebUI</a> - App Management</h1>
+        </header>
+
+        <main>
+            <div class="control-section">
+                <h3>List Apps</h3>
+                <button id="list_apps_btn" class="btn">List Installed Apps</button>
+                <div id="apps_list_container" style="margin-top: 20px;"></div>
+            </div>
+
+            <div class="control-section">
+                <h3>Uninstall App</h3>
+                <div class="input-group">
+                    <input type="text" id="package_name" placeholder="com.example.app">
+                    <button id="uninstall_app_btn" class="btn">Uninstall App</button>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Install App</h3>
+                <div class="input-group">
+                    <input type="file" id="apk_file" accept=".apk">
+                    <button id="install_app_btn" class="btn">Install App</button>
+                </div>
+            </div>
+
+            <div id="output-container">
+                <h3>Output</h3>
+                <pre id="output"></pre>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app_management.js') }}"></script>
+</body>
+</html>

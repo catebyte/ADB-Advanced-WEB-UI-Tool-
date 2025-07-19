@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Execute - ADB WebUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="header-link">ADB WebUI</a> - Shell Execute</h1>
+        </header>
+
+        <main>
+            <div class="control-section">
+                <h3>Enter Shell Command</h3>
+                <div class="input-group">
+                    <input type="text" id="shell_command" placeholder="e.g., ls /sdcard/">
+                    <button id="execute_btn" class="btn">Execute</button>
+                </div>
+            </div>
+
+            <div id="output-container">
+                <h3>Output</h3>
+                <pre id="output"></pre>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/shell_execute.js') }}"></script>
+</body>
+</html>

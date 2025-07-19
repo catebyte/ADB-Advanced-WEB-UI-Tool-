@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Screen - ADB WebUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="header-link">ADB WebUI</a> - Live Screen</h1>
+        </header>
+
+        <main>
+            <div id="live_screen_container">
+                <img id="live_screen_feed" src="" width="100%">
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const feed = document.getElementById('live_screen_feed');
+        const eventSource = new EventSource("/live_screen_feed", { withCredentials: true });
+
+        eventSource.onmessage = function(event) {
+            feed.src = "data:image/png;base64," + event.data;
+        };
+    </script>
+</body>
+</html>

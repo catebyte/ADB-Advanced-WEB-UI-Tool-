@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Capture - ADB WebUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="header-link">ADB WebUI</a> - Screen Capture</h1>
+        </header>
+
+        <main>
+            <div class="control-section">
+                <h3>Capture</h3>
+                <button id="screenshot_btn" class="btn">Take Screenshot</button>
+                <button id="screenrecord_btn" class="btn">Start Recording</button>
+                <button id="stop_screenrecord_btn" class="btn btn-danger hidden">Stop Recording</button>
+            </div>
+
+            <div id="output-container">
+                <h3>Preview</h3>
+                <div id="preview_container"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/screen_capture.js') }}"></script>
+</body>
+</html>
