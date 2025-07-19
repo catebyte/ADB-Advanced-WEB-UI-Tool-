@@ -29,7 +29,7 @@ A simple, intuitive web-based interface for managing Android devices with the An
 
     ```bash
     git clone https://github.com/catebyte/ADB-Advanced-WEB-UI-Tool-.git
-    cd adb-webui
+    cd ADB-Advanced-WEB-UI-Tool-
     ```
 
 3.  **Install the dependencies:**
