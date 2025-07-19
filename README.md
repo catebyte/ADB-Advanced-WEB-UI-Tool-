@@ -17,7 +17,7 @@ A simple, intuitive web-based interface for managing Android devices with the An
 
 | File Manager | App Management | Screen Capture |
 | :---: | :---: | :---: |
-| ![File Manager](images/file%20manager.png) | ![App Management](images/app%20manager.png) | ![Screen Capture](images/screenshot4.png) |
+| ![File Manager](images/file%20manager.png) | ![App Management](images/app%20manager.png) | ![Screen Capture](images/screencapture.png) |
 
 ## Installation
 
